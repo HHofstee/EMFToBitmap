@@ -18,12 +18,12 @@ namespace EMFToBitmap
             Bitmap2Pdf(bmp, output);
         }
 
-        static Bitmap EMF2Bitmap(string input)
+        static Bitmap EMF2Bitmap(string file_name)
         {
-            using (Metafile emf = new Metafile(input))
-            { 
+            using (Metafile emf = new Metafile(file_name))
+            {
                 Bitmap bmp = new Bitmap(emf.Width, emf.Height);
-           
+
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
                     g.DrawImage(emf, 0, 0);
@@ -31,7 +31,7 @@ namespace EMFToBitmap
                 }
             }
         }
-        static void Bitmap2Pdf(System.Drawing.Bitmap bmp, string output)
+        static void Bitmap2Pdf(System.Drawing.Bitmap bmp, string file_name)
         {
             ImageShape img = new ImageShape(bmp);
             Document document = new Document();
@@ -39,7 +39,7 @@ namespace EMFToBitmap
 
             page.VisualOverlay.Add(img);
             document.Pages.Add(page);
-            using (FileStream fs = new FileStream(output, FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(file_name, FileMode.Create, FileAccess.Write))
             {
                 document.Write(fs);
             }
