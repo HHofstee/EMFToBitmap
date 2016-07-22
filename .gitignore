@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/sample4.pdf
+/sample3.pdf
+/sample2.pdf
+/sample1.pdf

@@ -43,9 +43,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TallComponents.PDF.Kit">
-      <HintPath>.\TallComponents.PDF.Kit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -53,6 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\components\pdfkit4-net40.csproj">
+      <Project>{2a95fed4-83f4-47e9-9010-23980dec7beb}</Project>
+      <Name>pdfkit4-net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\components\tallpdf4-net40.csproj">
+      <Project>{b3657e0c-25ea-4135-a7ef-90eafde89ff5}</Project>
+      <Name>tallpdf4-net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
